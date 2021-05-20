@@ -58,8 +58,6 @@ var auditTask = function(taskEl) {
     // convert to moment object at 5:00pm
     var time = moment(date, "L").set("hour", 17);
 
-    console.log(time);
-
     // remove any old classes from element
     $(taskEl).removeClass("list-group-item-warning list-group-item-danger");
 
@@ -69,8 +67,6 @@ var auditTask = function(taskEl) {
     } else if (Math.abs(moment().diff(time, "days")) <= 2) {
         $(taskEl).addClass("list-group-item-warning");
     }
-
-    console.log(taskEl);
 };
 
 // enable draggable/sortable feature on list-group elements
@@ -89,10 +85,10 @@ $(".card .list-group").sortable({
         $(".bottom-trash").removeClass("bottom-trash-drag");
     },
     over: function(event) {
-        $(this).addClass("dropover-active", event.target);
+        $(event.target).addClass("dropover-active");
     },
     out: function(event) {
-        $(this).addClass("dropover-active", event.target);
+        $(event.target).addClass("dropover-active");
     },
     update: function() {
         var tempArr = [];
@@ -122,9 +118,6 @@ $(".card .list-group").sortable({
         // update array on tasks object and save
         tasks[arrName] = tempArr;
         saveTasks();
-    },
-    stop: function(event) {
-        $(this).removeClass("dropover");
     }
 });
 
@@ -289,12 +282,12 @@ $("#remove-tasks").on("click", function() {
     saveTasks();
 });
 
-setInterval(function() {
-    $(".card .list-group-item").each(function(index, el) {
-        auditTask(el);
-    });
-}, (1000 * 6) * 30);
-
-
 // load tasks for the first time
 loadTasks();
+
+// audit task due dates every 30 minutes
+setInterval(function() {
+    $(".card .list-group-item").each(function() {
+        auditTask($(this));
+    });
+}, (1000 * 6) * 30);
