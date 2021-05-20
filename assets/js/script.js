@@ -290,4 +290,4 @@ setInterval(function() {
     $(".card .list-group-item").each(function() {
         auditTask($(this));
     });
-}, (1000 * 6) * 30);
+}, 1800000);
