@@ -21,14 +21,18 @@
     <div class="row min-vh-100 no-gutters">
         <header class="col-12 col-lg-3 bg-dark text-light sticky-top d-flex flex-column p-4 p-lg-3">
             <h1 class="text-center">
-                <span class="oi oi-task d-inline d-lg-none"></span>Taskmaster Pro Edition
+                <span class="oi oi-task d-inline d-lg-none"></span>LÀM VIỆC THÔI
             </h1>
 
-            <button id="create-task" class="btn btn-block btn-add" data-toggle="modal" data-target="#task-form-modal"><span class="oi oi-plus"></span>Add Task</button>
+            <button id="create-task" class="btn btn-block btn-add" data-toggle="modal" data-target="#task-form-modal"><span class="oi oi-plus"></span>Thêm công việc</button>
 
-            <button id="remove-tasks" class="btn btn-block btn-delete"><span class="oi oi-trash"></span>Delete All Tasks</button>
+            <button id="remove-tasks" class="btn btn-block btn-delete"><span class="oi oi-trash"></span>Xóa tất cả</button>
+            <button class="btn btn-block btn-delete"><span class="oi oi-trash"></span>Tomato Time</button>
+            <button class="btn btn-block btn-delete"><span class="oi oi-trash"></span>Lướt Web</button>
+            <button class="btn btn-block btn-delete"><span class="oi oi-trash"></span>Nghe nhạc</button>
+            <button class="btn btn-block btn-delete"><span class="oi oi-trash"></span>Tập thở</button>
             <span class="oi oi-task display-1 text-center mb-2 d-none d-lg-block mt-auto"></span>
-            <p class="d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptas architecto ipsa excepturi aut non laudantium sequi fugit officiis optio deleniti asperiores rem eius laborum maxime blanditiis culpa, quis iste?
+            <p class="d-none d-lg-block">Hãy lên kế hoạch và hoàn thành tất cả công việc nhé
             </p>
         </header>
         <main class="col-12 col-lg-9 d-flex flex-column">
@@ -37,7 +41,7 @@
                 <div class="col-12 col-md-6 col-xl-3 mb-3">
                     <div class="card">
                         <h4 class="card-header bg-dark text-light">
-                            To Do
+                            Mới nhận
                         </h4>
                         <ul id="list-toDo" class="list-group list-group-flush">
                         </ul>
@@ -48,7 +52,7 @@
                 <div class="col-12 col-md-6 col-xl-3 mb-3">
                     <div class="card">
                         <h4 class="card-header bg-dark text-light">
-                            In Progress
+                            Đang làm
                         </h4>
                         <ul id="list-inProgress" class="list-group list-group-flush">
                         </ul>
@@ -59,7 +63,7 @@
                 <div class="col-12 col-md-6 col-xl-3 mb-3">
                     <div class="card">
                         <h4 class="card-header bg-dark text-light">
-                            In Review
+                            Đang đánh giá
                         </h4>
                         <ul id="list-inReview" class="list-group list-group-flush">
                         </ul>
@@ -70,7 +74,7 @@
                 <div class="col-12 col-md-6 col-xl-3 mb-3">
                     <div class="card">
                         <h4 class="card-header bg-dark text-light">
-                            Done
+                            Hoàn thành
                         </h4>
                         <ul id="list-done" class="list-group list-group-flush">
                         </ul>
@@ -79,7 +83,7 @@
                 <!-- done end -->
             </div>
             <div id="trash" class="mt-auto overflow-hidden">
-                <div class="w-100 p-3 text-center bottom-trash"><span class="oi oi-trash mx-auto mb-4"></span> Drop Here to Remove
+                <div class="w-100 p-3 text-center bottom-trash"><span class="oi oi-trash mx-auto mb-4"></span> Chuyển xuống đây để xóa
                 </div>
             </div>
         </main>
@@ -90,7 +94,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="task-form-modal">Add New Task</h5>
+                    <h5 class="modal-title" id="task-form-modal">Thêm công việc</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -98,18 +102,18 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="modalTaskDescription">Task description</label>
+                            <label for="modalTaskDescription">Thông tin công việc</label>
                             <textarea id="modalTaskDescription" rows="3" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="modalDueDate">Due date</label>
+                            <label for="modalDueDate">Hạn hoàn thành</label>
                             <input type="text" class="form-control" id="modalDueDate" placeholder="mm/dd/yyyy" autocomplete="off" />
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-save">Save Task</button>
+                    <button type="button" class="btn btn-close" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-save">Lưu</button>
                 </div>
             </div>
         </div>
